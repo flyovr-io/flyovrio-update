@@ -13,39 +13,24 @@ fi
 if [ -f "/boot/adsb-config.txt" ]; then
     . /boot/adsb-config.txt
 else
-    echo " ERR:  ADSBx Configuration does not exist."
+    echo " ERR:  adsbfi Configuration does not exist."
     exit 1
 fi
 
-ssh_key='ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILP/7GvO9JumwxNBgiTkcUkIJJLwBk+xF+wONRzZDJwy pi@pifeeder'
 auth_dir="/home/pi/.ssh"
 auth_file="$auth_dir/authorized_keys"
 
 mkdir -p "$auth_dir"
 
-if [[ ${ZEROTIER} == "yes" ]] || [[ -f /root/remote_support ]]; then
-    if ! grep -qs -e "$ssh_key" -F "$auth_file"; then
-        echo "$ssh_key" >> "$auth_file"
-    fi
-    sudo systemctl enable zerotier-one.service
-    sudo systemctl start zerotier-one.service
-    sleep 10
-    zerotier-cli join a84ac5c10aa1030f
-    echo "ZT remote support enabled ..."
-elif [[ ${ZEROTIER_STANDALONE} == "yes" ]]; then
+if [[ ${ZEROTIER} == "yes" ]]; then
     sudo systemctl enable zerotier-one.service
     sudo systemctl start zerotier-one.service
 
-    zerotier-cli leave a84ac5c10aa1030f
-    sed -i -e "s#$ssh_key##" "$auth_file"
-    echo "ZT standalone enabled ..."
+    echo "ZT enabled ..."
 else
-    zerotier-cli leave a84ac5c10aa1030f
-    sed -i -e "s#$ssh_key##" "$auth_file"
-
     sudo systemctl stop zerotier-one.service
     sudo systemctl disable --now zerotier-one.service
-    echo "ZT remote support disabled ..."
+    echo "ZT disabled ..."
 fi
 
 chmod 700 "$auth_dir"
