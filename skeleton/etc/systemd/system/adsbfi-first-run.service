@@ -1,5 +1,5 @@
 [Unit]
-Description=adsb-first-run
+Description=adsbfi-first-run
 Requires=local-fs.target
 After=local-fs.target
 Before=ssh.service
