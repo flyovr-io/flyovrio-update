@@ -10,8 +10,8 @@ if file_lt /etc/ssh/ssh_host_ed25519_key.pub 50 || file_lt /etc/ssh/ssh_host_ed2
     /usr/bin/ssh-keygen -A
 fi
 
-if [ -f "/boot/adsb-config.txt" ]; then
-    . /boot/adsb-config.txt
+if [ -f "/boot/adsbfi-config.txt" ]; then
+    . /boot/adsbfi-config.txt
 else
     echo " ERR:  adsbfi configuration does not exist."
     exit 1
