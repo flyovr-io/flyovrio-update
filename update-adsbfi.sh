@@ -47,10 +47,17 @@ for line in $(grep -v -e '^#' -e '^$' boot-configs/adsbfi-config.txt); do
 done
 
 # make sure things are executable before starting
-chmod a+x update-adsbfi
-chmod a+x adsbfi-create-uuid.sh 
-chmod a+x adsbfi-feed.sh 
-chmod a+x pingfail.sh 
+chmod a+x /usr/local/bin/adsbfi-create-uuid.sh 
+chmod a+x /usr/local/bin/update-adsbfi
+chmod a+x /usr/local/bin/adsbfi-feed.sh 
+chmod a+x /usr/local/bin/pingfail.sh 
+chmod a+x /usr/bin/adsbfi-first-run
+chmod a+x /usr/bin/adsbfi-temp.sh
+chmod a+x /usr/bin/adsbfi-pi-exporter
+chmod a+x /usr/bin/adsbfi-978-start
+chmod a+x /usr/bin/adsbfi-978
+chmod a+x /usr/bin/adsbfifeeder
+
 
 # remove strange dhcpcd wait.conf in case it's there
 rm -f /etc/systemd/system/dhcpcd.service.d/wait.conf
