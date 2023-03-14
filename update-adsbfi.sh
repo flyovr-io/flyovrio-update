@@ -69,7 +69,7 @@ for service in $MASK; do
 done &>/dev/null
 
 cd $updir
-git clone --quiet --depth 1 https://github.com/wiedehopf/readsb.git
+git clone --quiet --depth 1 https://github.com/adsbfi/readsb.git
 
 echo 'compiling readsb (this can take a while) .......'
 
