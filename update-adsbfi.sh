@@ -55,8 +55,8 @@ chmod a+x /usr/bin/adsbfi-first-run
 chmod a+x /usr/bin/adsbfi-temp.sh
 chmod a+x /usr/bin/adsbfi-pi-exporter
 chmod a+x /usr/bin/adsbfi-978-start
-chmod a+x /usr/bin/adsbfi-978
-chmod a+x /usr/bin/adsbfifeeder
+#chmod a+x /usr/bin/adsbfi-978
+#chmod a+x /usr/bin/adsbfifeeder
 
 
 # remove strange dhcpcd wait.conf in case it's there
