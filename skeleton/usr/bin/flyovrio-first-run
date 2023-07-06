@@ -21,22 +21,22 @@ function services-handle() {
         fi
     done
 }
-bash /usr/local/bin/adsbfi-create-uuid.sh
+bash /usr/local/bin/flyovrio-create-uuid.sh
 bash /usr/local/bin/fix-config.sh
-if [ -f "/boot/adsbfi-config.txt" ]; then
+if [ -f "/boot/flyovrio-config.txt" ]; then
 
     # remove spaces from non-comment lines:
-    sed -e '/^#/!s/ //g' /boot/adsbfi-config.txt > /run/adsbfi-config.txt
+    sed -e '/^#/!s/ //g' /boot/flyovrio-config.txt > /run/flyovrio-config.txt
     # cater to idiots
-    sed -i -e 's/NO/no/g' -e 's/YES/yes/g' /run/adsbfi-config.txt
+    sed -i -e 's/NO/no/g' -e 's/YES/yes/g' /run/flyovrio-config.txt
     # only do a write if necessary
-    if ! cmp /boot/adsbfi-config.txt /run/adsbfi-config.txt; then
-        mv -f /run/adsbfi-config.txt /boot/adsbfi-config.txt
+    if ! cmp /boot/flyovrio-config.txt /run/flyovrio-config.txt; then
+        mv -f /run/flyovrio-config.txt /boot/flyovrio-config.txt
     fi
 
-    . /boot/adsbfi-config.txt
+    . /boot/flyovrio-config.txt
 
-    SERVICES_978="dump978-fa adsbfi-978 tar1090-978"
+    SERVICES_978="dump978-fa flyovrio-978 tar1090-978"
     if [ ${DUMP978} == "yes" ]; then
         services-handle enable "$SERVICES_978"
     else
@@ -50,7 +50,7 @@ if [ -f "/boot/adsbfi-config.txt" ]; then
     fi
 
     # readsb isn't disabled as the main map needs to stay for feeding 978
-    SERVICES_MLAT="adsbfi-mlat"
+    SERVICES_MLAT="flyovrio-mlat"
     if [ ${DUMP1090} == "yes" ] && [[ $USER != "disable" ]]; then
         services-handle enable "$SERVICES_MLAT"
     else
@@ -76,6 +76,6 @@ fi
 
 
 # Runs a script that may be manually placed on /boot for batch setup.  By default, nothing there.
-if [[ -f /boot/adsbfi-firstboot.sh ]]; then
-    bash /boot/adsbfi-firstboot.sh
+if [[ -f /boot/flyovrio-firstboot.sh ]]; then
+    bash /boot/flyovrio-firstboot.sh
 fi
