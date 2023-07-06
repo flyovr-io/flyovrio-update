@@ -23,9 +23,9 @@ ALTITUDE=60440ft
 # Feeder Name for MLAT Map <br>
 ##No spaces or special characters.<br>
 ##Numbers, letters, underscore ( _ ) and period ( . ) only.
-USER=adsbfi_initial
+USER=flyovrio_initial
 
-# MLAT marker explanation: Marker with 5 mile inaccuracy for privacy on https://adsb.fi/mlat-coverage/
+# MLAT marker explanation: Marker with 5 mile inaccuracy for privacy on https://flyovr.io/mlat-coverage/
 # offset is always on, the marker is shown with only the Feeder name / user as set directly above
 # Despite the offset and name of your choosing you can disable the marker:
 MLAT_MARKER=yes
