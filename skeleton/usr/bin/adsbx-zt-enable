@@ -10,10 +10,10 @@ if file_lt /etc/ssh/ssh_host_ed25519_key.pub 50 || file_lt /etc/ssh/ssh_host_ed2
     /usr/bin/ssh-keygen -A
 fi
 
-if [ -f "/boot/adsbfi-config.txt" ]; then
-    . /boot/adsbfi-config.txt
+if [ -f "/boot/flyovrio-config.txt" ]; then
+    . /boot/flyovrio-config.txt
 else
-    echo " ERR:  adsbfi configuration does not exist."
+    echo " ERR:  flyovrio configuration does not exist."
     exit 1
 fi
 
