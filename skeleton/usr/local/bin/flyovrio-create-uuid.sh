@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if [ -f /boot/adsbfi-config.txt ]; then
-    UUID_FILE="/boot/adsbfi-uuid"
+if [ -f /boot/flyovrio-config.txt ]; then
+    UUID_FILE="/boot/flyovrio-uuid"
 else
-    mkdir -p /usr/local/share/adsbfi
-    UUID_FILE="/usr/local/share/adsbfi/adsbfi-uuid"
+    mkdir -p /usr/local/share/flyovrio
+    UUID_FILE="/usr/local/share/flyovrio/flyovrio-uuid"
 fi
 
 function generateUUID() {
