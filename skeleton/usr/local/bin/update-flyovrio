@@ -1,0 +1,3 @@
+#!/bin/bash
+
+bash -c "$(wget -nv -O - https://raw.githubusercontent.com/flyovr-io/flyovrio-update/main/update-flyovrio.sh)"

@@ -1,3 +1,0 @@
-#!/bin/bash
-
-bash -c "$(wget -nv -O - https://raw.githubusercontent.com/adsbfi/adsbfi-update/main/update-adsbfi.sh)"
