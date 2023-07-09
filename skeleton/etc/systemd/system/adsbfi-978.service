@@ -1,15 +1,15 @@
 [Unit]
 Wants=network.target
 After=network.target
-After=adsbfi-first-run.service
+After=flyovrio-first-run.service
 
 [Service]
-EnvironmentFile=/boot/adsbfi-978env
-SyslogIdentifier=adsbfi-978
-RuntimeDirectory=adsbfi-978
-User=adsbfi
+EnvironmentFile=/boot/flyovrio-978env
+SyslogIdentifier=flyovrio-978
+RuntimeDirectory=flyovrio-978
+User=flyovrio
 RuntimeDirectoryMode=0755
-ExecStart=/usr/bin/adsbfi-978-start
+ExecStart=/usr/bin/flyovrio-978-start
 Type=simple
 Restart=on-failure
 RestartSec=30
