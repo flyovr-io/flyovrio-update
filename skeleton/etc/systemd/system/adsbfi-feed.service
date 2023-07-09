@@ -1,20 +1,20 @@
 [Unit]
-Description=adsbfi-feed
+Description=flyovrio-feed
 Wants=network.target
 After=network.target
-After=adsbfi-first-run.service
+After=flyovrio-first-run.service
 
 [Service]
-User=adsbfi
-EnvironmentFile=/boot/adsbfi-config.txt
-RuntimeDirectory=adsbfi-feed
+User=flyovrio
+EnvironmentFile=/boot/flyovrio-config.txt
+RuntimeDirectory=flyovrio-feed
 RuntimeDirectoryMode=0755
-ExecStart=/usr/local/bin/adsbfi-feed.sh
+ExecStart=/usr/local/bin/flyovrio-feed.sh
 Type=simple
 Restart=on-failure
 RestartSec=30
 RestartPreventExitStatus=64
-SyslogIdentifier=adsbfi-feed
+SyslogIdentifier=flyovrio-feed
 
 [Install]
 WantedBy=default.target
