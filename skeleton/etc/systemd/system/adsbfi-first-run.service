@@ -1,12 +1,12 @@
 [Unit]
-Description=adsbfi-first-run
+Description=flyovrio-first-run
 Requires=local-fs.target
 After=local-fs.target
 Before=ssh.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/adsbfi-first-run
+ExecStart=/usr/bin/flyovrio-first-run
 WorkingDirectory=/run
 StandardOutput=inherit
 StandardError=inherit
