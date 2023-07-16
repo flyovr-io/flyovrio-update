@@ -3,9 +3,9 @@ Wants=network.target
 After=network.target
 
 [Service]
-SyslogIdentifier=adsbfi-zt-enable
+SyslogIdentifier=flyovrio-zt-enable
 User=root
-ExecStart=/usr/bin/adsbfi-zt-enable
+ExecStart=/usr/bin/flyovrio-zt-enable
 Type=oneshot
 
 [Install]
